@@ -6,11 +6,11 @@
 /*   By: atamas <atamas@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 19:35:26 by atamas            #+#    #+#             */
-/*   Updated: 2023/11/13 21:23:30 by atamas           ###   ########.fr       */
+/*   Updated: 2023/11/14 18:53:30 by atamas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_memset(void *b, int c, int len)
+void	*ft_memset(void *b, int c, int len)
 {
 	unsigned char	*ptr;
 
@@ -21,4 +21,5 @@ void	ft_memset(void *b, int c, int len)
 		len--;
 		ptr++;
 	}
+	return (b);
 }
