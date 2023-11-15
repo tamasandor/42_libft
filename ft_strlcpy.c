@@ -6,11 +6,11 @@
 /*   By: atamas <atamas@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 12:32:17 by atamas            #+#    #+#             */
-/*   Updated: 2023/11/14 16:10:14 by atamas           ###   ########.fr       */
+/*   Updated: 2023/11/15 13:09:46 by atamas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlcpy(char * restrict dst, const char * restrict src, int dstsize)
+int	ft_strlcpy(char *restrict dst, const char *restrict src, int dstsize)
 {
 	int	i;
 

@@ -6,13 +6,13 @@
 /*   By: atamas <atamas@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 22:39:33 by atamas            #+#    #+#             */
-/*   Updated: 2023/11/14 12:00:08 by atamas           ###   ########.fr       */
+/*   Updated: 2023/11/15 13:10:46 by atamas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	*ft_memmove(void *dst, const void *src, int len)
 {
-	char	*destination;
+	char		*destination;
 	const char	*source;
 
 	destination = (char *)dst;
