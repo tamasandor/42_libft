@@ -6,17 +6,16 @@
 /*   By: atamas <atamas@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 15:41:13 by atamas            #+#    #+#             */
-/*   Updated: 2023/11/15 16:07:28 by atamas           ###   ########.fr       */
+/*   Updated: 2023/11/15 16:08:40 by atamas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-
-void	ft_bzero(void *s, int n);
+#include "libft.h"
 
 void	*ft_calloc(int count, int size)
 {
-	void *start_of_memory;
+	void	*start_of_memory;
 
 	start_of_memory = malloc(count * size);
 	if (!start_of_memory)
@@ -24,4 +23,3 @@ void	*ft_calloc(int count, int size)
 	ft_bzero(start_of_memory, count);
 	return (start_of_memory);
 }
-
