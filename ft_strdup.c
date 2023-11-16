@@ -6,7 +6,7 @@
 /*   By: atamas <atamas@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 15:23:18 by atamas            #+#    #+#             */
-/*   Updated: 2023/11/16 15:33:10 by atamas           ###   ########.fr       */
+/*   Updated: 2023/11/16 15:37:22 by atamas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,4 @@ char	*ft_strdup(const char *src)
 	}
 	*memory = '\0';
 	return (start);
-}
-
-#include <stdio.h>
-
-int	main(void)
-{
-	char *original = "Almakettto";
-	char *start = ft_strdup(original);
-	printf("%s", start);
-	original = "Japp";
-	printf("%s", start);
 }
