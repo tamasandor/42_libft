@@ -6,7 +6,7 @@
 /*   By: atamas <atamas@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 20:38:38 by atamas            #+#    #+#             */
-/*   Updated: 2023/11/23 16:00:42 by atamas           ###   ########.fr       */
+/*   Updated: 2023/11/23 16:33:01 by atamas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ Fills the given memory buffer with nulls until n
 Input: pointer to void *s and integer n
 Return: Nothing
  */
-
 void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*ptr;

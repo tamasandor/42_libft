@@ -6,7 +6,7 @@
 /*   By: atamas <atamas@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 19:16:55 by atamas            #+#    #+#             */
-/*   Updated: 2023/11/23 15:34:30 by atamas           ###   ########.fr       */
+/*   Updated: 2023/11/23 16:31:50 by atamas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ Makes ascii to integer until it reaches the first character
 Input: string
 Return: integer that got converted from ascii
  */
-
 int	ft_atoi(const char *str)
 {
 	int	minus;

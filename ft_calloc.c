@@ -6,14 +6,20 @@
 /*   By: atamas <atamas@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 15:41:13 by atamas            #+#    #+#             */
-/*   Updated: 2023/11/15 16:08:40 by atamas           ###   ########.fr       */
+/*   Updated: 2023/11/23 16:31:29 by atamas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stddef.h>
 #include "libft.h"
 
-void	*ft_calloc(int count, int size)
+/* 
+Allocates and sets the memory to null
+Input: the amount of memory called count and the size is the sizeof the memory
+Return: pointer to the start of memory
+ */
+void	*ft_calloc(size_t count, size_t size)
 {
 	void	*start_of_memory;
 
@@ -23,3 +29,13 @@ void	*ft_calloc(int count, int size)
 	ft_bzero(start_of_memory, count);
 	return (start_of_memory);
 }
+
+/* #include <stdio.h>
+
+int	main(void)
+{
+	char	*test = ft_calloc(3, sizeof(char));
+	test[0] = 'a';
+	printf("%s\n", test);
+}
+ */
