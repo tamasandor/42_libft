@@ -6,15 +6,15 @@
 /*   By: atamas <atamas@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 11:24:18 by atamas            #+#    #+#             */
-/*   Updated: 2023/11/22 14:02:56 by atamas           ###   ########.fr       */
+/*   Updated: 2023/11/23 15:17:06 by atamas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-
-// test begin
+#include "libft.h"
+/* test begin
 #include <stdio.h>
-// test end
+test end */
 
 char	*free_the_memory(char **memory)
 {
@@ -23,12 +23,11 @@ char	*free_the_memory(char **memory)
 	i = 0;
 	while (memory[i] != NULL)
 	{
-		free(memory[i]);
+		free(memory[i++]);
 	}
 	free(memory);
 	return (NULL);
 }
-
 
 int	word_counter(const char *string, char delimiter)
 {
@@ -53,61 +52,60 @@ int	word_counter(const char *string, char delimiter)
 int	word_length(const char *string, char delimiter)
 {
 	int	length;
+	int	i;
 
 	length = 0;
-	while (*string++ != delimiter)
+	i = 0;
+	while (string[i] != delimiter && string[i] != '\0')
+	{
 		length++;
+		i++;
+	}
 	return (length);
-}
-
-char	*allocate_memory(int	size)
-{
-	char	*memory;
-
-	memory = malloc(sizeof(char) * (size + 1));
-	if (!memory)
-		return (NULL);
-	return (memory);
 }
 
 char	**ft_split(char const *string, char delimiter)
 {
 	char	**memory;
-	int		i;
-	int		memory_index;
-	int		first_letter;
+	int		mem_i;
 	int		length;
 
-	i = 0;
-	memory_index = 0;
-	first_letter = 0;
+	mem_i = 0;
 	length = 0;
 	memory = malloc(sizeof(char *) * (word_counter(string, delimiter) + 1));
 	if (!memory)
 		return (NULL);
-	while (string[i] != '\0')
+	while (*string != '\0')
 	{
-		allocate_memory(word_length(string[i], delimiter));
-		if (allocate_memory == NULL)
+		if (*string != delimiter)
 		{
-			free_the_memory(memory);
-			return (NULL);
+			length = word_length(&*string, delimiter);
+			memory[mem_i++] = ft_substr(string, 0, length);
+			if (memory[mem_i - 1] == NULL)
+				return ((void *)free_the_memory(memory));
+			string += length;
 		}
-		/* 
-		While i am not at the end of the string
-		if there is a word and not the delimeter than allocate memory to the word //calculate//
-		and then fill it until you reach the delimeter or the null term. and then null terminate it
-		*/
+		else
+			string++;
 	}
-	memory[memory_index] = NULL;
+	memory[mem_i] = NULL;
 	return (memory);
 }
 
+/* 
 int	main(void)
 {
-	char	*string = "Andor is in the school";
-	// ft_split(string, ' ');
-	int	num;
-	num = word_length(string, ' ');
-	printf("The first w length: %d\n", num);
+	int	i = 0;
+	char	*string;
+	char	**memory;
+
+	string = "Andor is finishing Libft";
+	memory = ft_split(string, ' ');
+	while (memory[i])
+	{
+		printf("%s\n", memory[i]);
+		i++;
+	}
+	free_the_memory(memory);
 }
+ */
