@@ -6,12 +6,18 @@
 /*   By: atamas <atamas@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 15:23:18 by atamas            #+#    #+#             */
-/*   Updated: 2023/11/16 15:37:22 by atamas           ###   ########.fr       */
+/*   Updated: 2023/11/24 14:58:12 by atamas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+/* #include <stdio.h> */
 
+/* 
+Allocates enough memory and then it does the copy
+Return: pointer to the first char in the memory
+	or NULL if the allocation failed
+ */
 char	*ft_strdup(const char *src)
 {
 	char	*memory;
@@ -36,3 +42,15 @@ char	*ft_strdup(const char *src)
 	*memory = '\0';
 	return (start);
 }
+
+/* int	main(void)
+{
+	char	*string;
+	char	*result;
+
+	string = "42 is the best school";
+	result = ft_strdup(string);
+	printf("The duplicated string is: %s\n", result);
+	free(result);
+}
+ */
