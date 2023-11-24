@@ -6,10 +6,14 @@
 /*   By: atamas <atamas@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 15:30:31 by atamas            #+#    #+#             */
-/*   Updated: 2023/11/14 12:26:30 by atamas           ###   ########.fr       */
+/*   Updated: 2023/11/24 14:53:05 by atamas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/* 
+Locates the first occurence to character c in the string
+Return: pointer to the character in the string or NULL
+*/
 char	*ft_strchr(const char *string, int c)
 {
 	while (*string != '\0')
