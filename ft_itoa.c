@@ -6,7 +6,7 @@
 /*   By: atamas <atamas@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:16:42 by atamas            #+#    #+#             */
-/*   Updated: 2023/11/18 17:53:59 by atamas           ###   ########.fr       */
+/*   Updated: 2023/11/24 11:52:38 by atamas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,11 @@ int	handle_negative(char *string, int n)
 	return (n * -1);
 }
 
+/* 
+Makes integer to ascii
+Input: integer
+Return: the converted string
+ */
 char	*ft_itoa(int n)
 {
 	int		multidigit;
@@ -73,7 +78,7 @@ char	*ft_itoa(int n)
 	return (string);
 }
 
-/* // test
+/*
 #include <stdio.h>
 
 int	main(void)
