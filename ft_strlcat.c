@@ -6,28 +6,43 @@
 /*   By: atamas <atamas@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 16:10:45 by atamas            #+#    #+#             */
-/*   Updated: 2023/11/15 13:10:34 by atamas           ###   ########.fr       */
+/*   Updated: 2023/11/27 13:05:43 by atamas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stddef.h>
 
-int	strlcat(char *restrict dst, const char *restrict src, int dstsize)
+/* 
+Appends string src to dst.
+Return: 
+ */
+int	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	int	dest_length;
-	int	src_length;
-	int	i;
+	size_t	dest_length;
+	size_t	src_length;
+	size_t	i;
 
 	dest_length = ft_strlen(dst);
 	src_length = ft_strlen(src);
 	i = dest_length;
 	if (dstsize == 0)
 		return (dest_length);
-	while (i < dest_length - 1 && src != '\0')
+	while (i < dstsize && *src != '\0')
 	{
-		dst[i] = src++;
+		dst[i] = *src++;
 		i++;
 	}
-	dst[i] = '\0';
+	if (i < dstsize)
+		dst[i] = '\0';
 	return (dest_length + src_length);
 }
+
+/* #include <stdio.h>
+int	main(void)
+{
+	char dest[20] = "Andor ";
+	char *from = "is happy";
+
+	printf("The string is %s with nr: %d", dest, ft_strlcat(dest, from, 14));
+} */
