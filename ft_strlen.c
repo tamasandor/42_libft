@@ -6,13 +6,15 @@
 /*   By: atamas <atamas@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 19:04:50 by atamas            #+#    #+#             */
-/*   Updated: 2023/11/17 16:34:41 by atamas           ###   ########.fr       */
+/*   Updated: 2023/11/27 14:44:36 by atamas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *string)
+#include "libft.h"
+
+size_t	ft_strlen(const char *string)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (string[i] != '\0')
