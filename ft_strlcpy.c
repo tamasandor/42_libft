@@ -6,24 +6,30 @@
 /*   By: atamas <atamas@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 12:32:17 by atamas            #+#    #+#             */
-/*   Updated: 2023/11/17 16:23:58 by atamas           ###   ########.fr       */
+/*   Updated: 2023/11/27 13:59:52 by atamas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlcpy(char *dst, const char *src, int dstsize)
+#include <stddef.h>
+#include "libft.h"
+
+int	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	int	i;
+	size_t	i;
+	size_t	src_len;
 
 	i = 0;
+	src_len = ft_strlen(src);
 	if (dstsize == 0)
 	{
-		return (i);
+		return (src_len);
 	}
-	while ((i < dstsize - 1) && src[i] != '\0')
+	while ((i < dstsize) && src[i] != '\0')
 	{
 		dst[i] = src[i];
 		i++;
 	}
-	dst[i] = '\0';
-	return (i + 1);
+	if (i < dstsize)
+		dst[i] = '\0';
+	return (src_len);
 }
