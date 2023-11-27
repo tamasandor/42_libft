@@ -6,21 +6,28 @@
 /*   By: atamas <atamas@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 19:16:07 by atamas            #+#    #+#             */
-/*   Updated: 2023/11/13 19:29:08 by atamas           ###   ########.fr       */
+/*   Updated: 2023/11/27 14:23:57 by atamas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, int until)
+#include <stddef.h>
+
+int	ft_strncmp(char *s1, char *s2, size_t until)
 {
-	while (*s1 != '\0' && *s2 != '\0' && *s1 == *s2)
+	while (*s1 != '\0' && *s2 != '\0' && *s1 == *s2 && until == 0)
 	{
-		if (until <= 0)
-		{
-			return (*s1 - *s2);
-		}
 		s1++;
 		s2++;
 		until--;
 	}
-	return (*s1 - *s2);
+	return ((unsigned char)*s1 - (unsigned char)*s2);
 }
+
+/* #include <stdio.h>
+
+int	main(void)
+{
+	char	*first = "Andor is home";
+	char	*second = "Andor is here";
+	printf("The diff is: %d", ft_strncmp(first, second, 12));
+} */
