@@ -6,7 +6,7 @@
 /*   By: atamas <atamas@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 08:55:27 by atamas            #+#    #+#             */
-/*   Updated: 2023/11/27 08:59:35 by atamas           ###   ########.fr       */
+/*   Updated: 2023/11/27 09:00:45 by atamas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 /* 
 Outputs the string 's' to the given file descriptor with a newline at the end
  */
-void	ft_putstr_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
 	int	length;
 
@@ -35,6 +35,6 @@ void	ft_putstr_fd(char *s, int fd)
 	write(test_fd, "Before: ", 8);
 	write(test_fd, test_string, 24);
 	write(test_fd, "\n", 1);
-	ft_putstr_fd(test_string, test_fd);
+	ft_putendl_fd(test_string, test_fd);
 	write(test_fd, "\n", 1);
 } */
