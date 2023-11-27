@@ -6,7 +6,7 @@
 /*   By: atamas <atamas@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 16:10:45 by atamas            #+#    #+#             */
-/*   Updated: 2023/11/27 13:05:43 by atamas           ###   ########.fr       */
+/*   Updated: 2023/11/27 13:10:13 by atamas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 /* 
 Appends string src to dst.
-Return: 
+Return: is the length of dest if dstsize is 0 or the size 
+of destination and scource added together
  */
 int	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
