@@ -6,7 +6,7 @@
 /*   By: atamas <atamas@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 14:05:37 by atamas            #+#    #+#             */
-/*   Updated: 2023/11/27 15:40:22 by atamas           ###   ########.fr       */
+/*   Updated: 2023/11/28 20:40:00 by atamas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,32 +19,29 @@ char	*ft_strnstr(const char *big_str, const char *small_str, size_t len)
 	size_t	len_of_small_str;
 
 	i = 0;
-	j = 0;
 	if (*small_str == '\0')
 		return ((char *)big_str);
 	len_of_small_str = ft_strlen(small_str);
-	while (i + len_of_small_str <= len && big_str[i] != '\0')
+	if (len < 0)
+		len = ft_strlen(big_str);
+	while (i < len)
 	{
-		if (small_str[j] != '\0' && big_str[i] == small_str[j])
-			j++;
-		else if (small_str[j] == '\0')
-			return (i -= j, (char *)big_str + i);
-		else
-			j = 0;
+		
 		i++;
 	}
 	return (0);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 
 int	main(void)
 {
 	char	*bigstr;
 	char	*retstr;
 
-	bigstr = "Students learning in the 42 school";
+	bigstr = "Students lealma in the 42 school";
 	// retstr = ft_strnstr(bigstr, "a", 12); test case fails it should not
-	retstr = ft_strnstr(bigstr, "a", 12);
+	retstr = ft_strnstr(bigstr, "alma", 12);
 	printf("String is: %s", retstr);
 }
+ */ 

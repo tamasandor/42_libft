@@ -6,7 +6,7 @@
 /*   By: atamas <atamas@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 15:41:13 by atamas            #+#    #+#             */
-/*   Updated: 2023/11/23 16:31:29 by atamas           ###   ########.fr       */
+/*   Updated: 2023/11/28 15:34:12 by atamas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	*ft_calloc(size_t count, size_t size)
 	start_of_memory = malloc(count * size);
 	if (!start_of_memory)
 		return (NULL);
-	ft_bzero(start_of_memory, count);
+	ft_bzero(start_of_memory, count * size);
 	return (start_of_memory);
 }
 

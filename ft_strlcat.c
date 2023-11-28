@@ -6,7 +6,7 @@
 /*   By: atamas <atamas@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 16:10:45 by atamas            #+#    #+#             */
-/*   Updated: 2023/11/27 13:10:13 by atamas           ###   ########.fr       */
+/*   Updated: 2023/11/28 18:17:21 by atamas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,25 @@ int	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	dest_length;
 	size_t	src_length;
 	size_t	i;
+	size_t	j;
 
+	if (!dst && !src)
+		return (0);
 	dest_length = ft_strlen(dst);
 	src_length = ft_strlen(src);
 	i = dest_length;
-	if (dstsize == 0)
-		return (dest_length);
-	while (i < dstsize && *src != '\0')
+	j = 0;
+	if (dstsize < dest_length)
+		return (dstsize + src_length);
+	while (j + dest_length < dstsize && src[j] != '\0')
 	{
-		dst[i] = *src++;
+		dst[i] = src[j];
 		i++;
+		j++;
 	}
-	if (i < dstsize)
+	if ((dest_length + j) == dstsize && j > 0)
+		dst[i - 1] = '\0';
+	else
 		dst[i] = '\0';
 	return (dest_length + src_length);
 }

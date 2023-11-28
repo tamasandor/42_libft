@@ -6,39 +6,42 @@
 /*   By: atamas <atamas@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 16:30:26 by atamas            #+#    #+#             */
-/*   Updated: 2023/11/23 15:20:55 by atamas           ###   ########.fr       */
+/*   Updated: 2023/11/28 20:28:15 by atamas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, int len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*substring;
-	char	*start_of_substring;
-	char	*string;
-	int		i;
+	char			*substring;
+	size_t			i;
+	unsigned int	length_of_s;
 
-	i = start;
-	substring = malloc(sizeof(char) * (len - start) + 1);
+	i = 0;
+	if (!s)
+		return (NULL);
+	length_of_s = ft_strlen(s);
+	if (len == 0 || start >= length_of_s)
+		substring = malloc(sizeof(char) * 1);
+	else if (len > length_of_s - start)
+		substring = malloc((length_of_s - start + 1) * sizeof(char));
+	else
+		substring = malloc(sizeof(char) * (len + 1));
 	if (!substring)
 		return (NULL);
-	start_of_substring = substring;
-	string = ((char *)s + start);
-	while (*string != '\0' && i < len)
-	{
-		*substring++ = *string++;
-		i++;
-	}
-	*substring = '\0';
-	return (start_of_substring);
+	while (i < len && start < length_of_s)
+		substring[i++] = s[start++];
+	substring[i] = '\0';
+	return (substring);
 }
 
 /* #include <stdio.h>
 
 int	main(void)
 {
-	char	*string = "Maybe Andor is in the school";
-	char	*ret = ft_substr(string, 0, 4);
+	char	*string = "hola";
+	char	*ret = ft_substr(string, 3, 2);
 	printf("%s", ret);
 } */

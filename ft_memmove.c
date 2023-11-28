@@ -6,7 +6,7 @@
 /*   By: atamas <atamas@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 22:39:33 by atamas            #+#    #+#             */
-/*   Updated: 2023/11/24 14:37:43 by atamas           ###   ########.fr       */
+/*   Updated: 2023/11/28 13:51:07 by atamas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,23 +25,19 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	destination = (char *)dst;
 	source = (const char *)src;
+	if (!destination && !source)
+		return (NULL);
 	if (destination == source || len == 0)
 		return (dst);
 	if (destination > source)
 	{
-		while (len + 1 > 0)
-		{
+		while (len-- > 0)
 			destination[len] = source[len];
-			len--;
-		}
 	}
 	else
 	{
-		while (len + 1 > 0)
-		{
+		while (len-- > 0)
 			*destination++ = *source++;
-			len--;
-		}
 	}
 	return (dst);
 }
