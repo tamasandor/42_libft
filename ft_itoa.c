@@ -6,14 +6,14 @@
 /*   By: atamas <atamas@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:16:42 by atamas            #+#    #+#             */
-/*   Updated: 2023/11/24 11:52:38 by atamas           ###   ########.fr       */
+/*   Updated: 2023/12/02 15:00:57 by atamas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-int	ft_num_multi_digits(int n)
+static int	ft_num_multi_digits(int n)
 {
 	int	multidigit;
 
@@ -38,7 +38,7 @@ int	ft_num_multi_digits(int n)
 	return (multidigit);
 }
 
-int	handle_negative(char *string, int n)
+static int	handle_negative(char *string, int n)
 {
 	string[0] = '-';
 	return (n * -1);

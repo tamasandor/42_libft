@@ -6,7 +6,7 @@
 /*   By: atamas <atamas@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 11:24:18 by atamas            #+#    #+#             */
-/*   Updated: 2023/11/28 15:41:23 by atamas           ###   ########.fr       */
+/*   Updated: 2023/12/02 15:01:49 by atamas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <stdio.h>
 test end */
 
-char	*free_the_memory(char **memory)
+static char	*free_the_memory(char **memory)
 {
 	int	i;
 
@@ -29,7 +29,7 @@ char	*free_the_memory(char **memory)
 	return (NULL);
 }
 
-int	word_counter(const char *string, char delimiter)
+static int	word_counter(const char *string, char delimiter)
 {
 	int	amount_of_words;
 	int	in_word;
@@ -49,7 +49,7 @@ int	word_counter(const char *string, char delimiter)
 	return (amount_of_words);
 }
 
-int	word_length(const char *string, char delimiter)
+static int	word_length(const char *string, char delimiter)
 {
 	int	length;
 	int	i;
