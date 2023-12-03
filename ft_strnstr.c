@@ -6,7 +6,7 @@
 /*   By: atamas <atamas@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 14:05:37 by atamas            #+#    #+#             */
-/*   Updated: 2023/11/29 15:05:51 by atamas           ###   ########.fr       */
+/*   Updated: 2023/12/03 19:13:06 by atamas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ char	*ft_strnstr(const char *big_str, const char *small_str, size_t len)
 	if (*small_str == '\0')
 		return ((char *)big_str);
 	small_len = ft_strlen(small_str);
-	if (len < 0)
-		len = ft_strlen(big_str);
 	while (*big_str && small_len <= len)
 	{
 		if (*big_str == *small_str)
