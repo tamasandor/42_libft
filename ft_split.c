@@ -6,7 +6,7 @@
 /*   By: atamas <atamas@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 11:24:18 by atamas            #+#    #+#             */
-/*   Updated: 2023/12/02 15:01:49 by atamas           ###   ########.fr       */
+/*   Updated: 2023/12/03 19:05:33 by atamas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ char	**ft_split(char const *string, char delimiter)
 	{
 		if (*string != delimiter)
 		{
-			length = word_length(&*string, delimiter);
+			length = word_length(string, delimiter);
 			memory[mem_i++] = ft_substr(string, 0, length);
 			if (memory[mem_i - 1] == NULL)
 				return ((void *)free_the_memory(memory));
